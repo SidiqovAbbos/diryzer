@@ -20,9 +20,7 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: npm test
-
-      - name: Verify Build Output
-        run: ls -la ./dist
+      - run: zip -r dist.zip ./dist
 
   release:
     needs: build
@@ -39,4 +37,12 @@ jobs:
           release_name: Release ${{ github.ref }}
           draft: false
           prerelease: false
+        
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./dist.zip
+          asset_name: dist.zip
+          asset_content_type: application/zip
 

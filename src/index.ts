@@ -69,7 +69,7 @@ program
   .description(
     "A CLI tool to analyze the distribution of file types in a directory"
   )
-  .version("1.0.7")
+  .version("1.0.8")
   .argument("<directory>", "Directory to analyze")
   .option("-e, --exclude <patterns...>", "Patterns to exclude from analysis")
   .option("-d, --depth <number>", "Depth of subdirectories to analyze", "5")
