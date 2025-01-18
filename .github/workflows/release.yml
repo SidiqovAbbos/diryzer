@@ -2,8 +2,12 @@ name: Create Release
 
 on:
   push:
-    tags:
-      - "v*.*.*"
+    branches:
+      - main
+# on:
+#   push:
+#     tags:
+#       - "v*.*.*"
 
 permissions:
   contents: write
