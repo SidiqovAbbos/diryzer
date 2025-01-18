@@ -20,13 +20,30 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: npm test
-      - run: zip -r dist.zip ./dist
+          
+      - name: Create Zip File
+        run: zip -r dist.zip ./dist
+      
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist-zip
+          path: dist.zip
 
   release:
     needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      
+      - name: Download Build Artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: dist-zip
+      
+      - name: Verify Downloaded Artifact
+        run: ls -la dist.zip
+      
       - name: Create Release
         id: create_release
         uses: actions/create-release@latest
