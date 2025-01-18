@@ -6,8 +6,8 @@ A sleek command-line tool for analyzing directory contents with visual file type
 
 [![npm version](https://img.shields.io/npm/v/diryzer.svg)](https://www.npmjs.com/package/diryzer)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub issues](https://img.shields.io/github/issues/abbos-khamidov/diryzer)](https://github.com/abbos-khamidov/diryzer/issues)
-[![GitHub stars](https://img.shields.io/github/stars/abbos-khamidov/diryzer)](https://github.com/abbos-khamidov/diryzer/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/SidiqovAbbos/diryzer)](https://github.com/SidiqovAbbos/diryzer/issues)
+[![GitHub stars](https://img.shields.io/github/stars/SidiqovAbbos/diryzer)](https://github.com/SidiqovAbbos/diryzer/stargazers)
 
 </div>
 
@@ -117,8 +117,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🌐 Links
 
-- [GitHub Repository](https://github.com/abbos-khamidov/diryzer)
-- [Bug Reports](https://github.com/abbos-khamidov/diryzer/issues)
+- [GitHub Repository](https://github.com/SidiqovAbbos/diryzer)
+- [Bug Reports](https://github.com/SidiqovAbbos/diryzer/issues)
 - [npm Package](https://www.npmjs.com/package/diryzer)
 
 ---
