@@ -2,8 +2,12 @@ name: Create Release
 
 on:
   push:
-    tags:
-      - "v*.*.*"
+    branches:
+      - main
+# on:
+#   push:
+#     tags:
+#       - "v*.*.*"
 
 permissions:
   contents: write
@@ -21,6 +25,9 @@ jobs:
       - run: npm run build
       - run: npm test
 
+      - name: Verify Build Output
+        run: ls -la ./dist
+
   release:
     needs: build
     runs-on: ubuntu-latest
@@ -32,8 +39,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
+          tag_name: v1.0.5
+          release_name: Release v1.0.5
           draft: false
           prerelease: false
 
