@@ -1,6 +1,6 @@
 {
   "name": "diryzer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "type": "module",
   "types": "dist/directory-analyzer.d.ts",
@@ -30,6 +30,14 @@
   "author": "Abbos Sidiqov",
   "license": "MIT",
   "description": "A CLI tool to analyze directory file types",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SidiqovAbbos/diryzer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SidiqovAbbos/diryzer/issues"
+  },
+  "homepage": "https://github.com/SidiqovAbbos/diryzer#readme",
   "dependencies": {
     "chalk": "^5.4.1",
     "commander": "^13.0.0",
