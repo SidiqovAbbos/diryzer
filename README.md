@@ -19,13 +19,11 @@ A sleek command-line tool for analyzing directory contents with visual file type
 - 🚫 Pattern-based directory exclusion
 - 📈 Optional percentage display
 
-## 🚀 Installation
+## 💻 Global Usage
 
 ```bash
 npm install -g diryzer
 ```
-
-## 💻 Usage
 
 ### Basic Command
 
@@ -63,20 +61,9 @@ diryzer --depth 3 --percentage .
 
 ## 🖥️ Example Output
 
-```
-Total Files: 42
-Total File Types: 5
-
-[=================== ]
-.ts     :15  (35.71%)
-.js     :10  (23.81%)
-.json   :8   (19.05%)
-.md     :5   (11.90%)
-.txt    :4   (9.52%)
-```
+![Output](images/image.png)
 
 ## 🔧 Programmatic Usage
-### Installation for Developer Projects
 
 To install `diryzer` as a development dependency in your project, run:
 
@@ -95,6 +82,13 @@ const analyzer = new DirectoryAnalyzer({
 });
 
 const result = analyzer.analyze();
+/* Result is array of FileType
+  {
+    extension: string;
+    count: number; 
+    percentage: number; 
+  }
+*/
 ```
 
 ## 🤝 Contributing

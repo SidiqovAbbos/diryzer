@@ -20,10 +20,10 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: npm test
-
+          
       - name: Create Zip File
         run: zip -r dist.zip ./dist
-
+      
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v3
         with:
@@ -35,15 +35,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
+      
       - name: Download Build Artifact
         uses: actions/download-artifact@v3
         with:
           name: dist-zip
-
+      
       - name: Verify Downloaded Artifact
         run: ls -la dist.zip
-
+      
       - name: Create Release
         id: create_release
         uses: actions/create-release@latest
@@ -54,13 +54,12 @@ jobs:
           release_name: Release ${{ github.ref }}
           draft: false
           prerelease: false
-
+        
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./dist.zip
           asset_name: dist.zip
           asset_content_type: application/zip
+
