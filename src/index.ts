@@ -26,7 +26,6 @@ function handleCommandAction(directory: string, options: CommandOptions) {
       process.exit(1);
     }
 
-    
     const statistics = analyzer.analyze();
 
     console.log(`Total Files: ${analyzer.getFilesCount()}`);
