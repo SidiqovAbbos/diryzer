@@ -59,7 +59,7 @@ Set scan depth and show percentages:
 diryzer --depth 3 --percentage .
 ```
 
-## 🖥️ Example Output
+### 🖥️ Example Output
 
 ![Output](images/image.png)
 
