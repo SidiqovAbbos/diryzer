@@ -19,6 +19,12 @@ A sleek command-line tool for analyzing directory contents with visual file type
 - 🚫 Pattern-based directory exclusion
 - 📈 Optional percentage display
 
+## 🌟 Inspired By
+
+GitHub's repository languages section - A visual representation of language distribution in repositories:
+
+![GitHub Languages](images/gh-languages.png)
+
 ## 💻 Global Usage
 
 ```bash
@@ -37,9 +43,8 @@ diryzer <directory>
 Options:
   -V, --version              output the version number
   -e, --exclude <patterns>   patterns to exclude from analysis
-  -d, --depth <number>      depth of subdirectories to analyze (default: "5")
-  -p, --percentage          show file distribution as percentages
-  -h, --help               display help for command
+  -d, --depth <number>       depth of subdirectories to analyze (default: "5")
+  -h, --help                 display help for command
 ```
 
 ### 📝 Examples
@@ -54,14 +59,14 @@ Exclude specific directories:
 diryzer --exclude 'node_modules/**' '.git' .
 ```
 
-Set scan depth and show percentages:
+Set scan depth:
 ```bash
-diryzer --depth 3 --percentage .
+diryzer --depth 3 .
 ```
 
 ### 🖥️ Example Output
 
-![Output](images/image.png)
+![Output](images/example.png)
 
 ## 🔧 Programmatic Usage
 
@@ -75,18 +80,21 @@ You can then use it in your project scripts or directly in your code.
 ```typescript
 import { DirectoryAnalyzer } from 'diryzer';
 
-const analyzer = new DirectoryAnalyzer({
+const diryzer = new DirectoryAnalyzer({
   directoryPath: './my-project',
   depth: 5,
   excludePatterns: ['node_modules/**']
 });
 
-const result = analyzer.analyze();
-/* Result is array of FileType
+const result = diryzer.analyze();
+/* result is Record<string, FileType>
   {
-    extension: string;
-    count: number; 
-    percentage: number; 
+    ".js": {
+      extension: ".js";
+      count: 2; 
+      percentage: 25; 
+    }
+    ... others
   }
 */
 ```
